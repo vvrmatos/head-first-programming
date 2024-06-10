@@ -9,6 +9,6 @@ guess = int(g)
 
 # Flow control, data verification
 if guess == 5:
-  print("You win!")
+    print("You win!")
 else:
-  print("You lose!")
+    print("You lose!")
