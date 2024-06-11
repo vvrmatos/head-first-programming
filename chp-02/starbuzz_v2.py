@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import re
 import urllib.request
 
 message = "Pattern not found"
@@ -8,4 +9,7 @@ webpage = "https://beans.itcarlow.ie/prices.html"
 page = urllib.request.urlopen(webpage)
 text = page.read().decode("UTF-8")
 
-print(text)
+result = re.search(r"\$\d+.\d+", text)
+price = result.group() if result else message
+
+print(price)
